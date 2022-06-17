@@ -5,13 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
-
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<IEndUserRepository, EndUserRepository>();
 builder.Services.AddScoped<IOpportunityRepository, OpportunityRepository>();
 builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 builder.Services.AddScoped<IFriendRepository, FriendRepository>();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

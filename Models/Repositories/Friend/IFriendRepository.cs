@@ -1,6 +1,6 @@
 ﻿namespace VolunTEENProject.Models.Repositories
 {
-    public class IFriendRepository
+    public interface IFriendRepository
     {
     }
 }

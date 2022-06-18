@@ -1,0 +1,102 @@
+﻿EndUsers
+	1.) Create Profile
+		1a.) Personal Information
+		1b.) Education Level
+		1c.) Special Skills
+		1d.) Areas of Interest
+	2.) Search for opportunities
+		2a.) Date
+		2b.) Skill Level
+		2c.) Education Level
+		2d.) Age
+		2e.) area of Interest
+	3.) Register for events
+	4.) Add Friends
+		4a.) Friends Database
+		4b.) Mapping Table (Associative Table)
+	5.) View Friends registered for events
+
+
+Admins
+	1.) Edit/View Accounts
+		1a.) Reset Passwords/Send Usernames
+	2.) View Site statistics and Generate reports by Partner
+		2a.) How many opportunities a partner has Openned/Open
+		2b.) How many volunteers have matched with the event
+	3.) Manually re-send confirmation details
+		3a.) Email/Text
+		3b.) Send Calendar invite
+	4.) Manage events and related documents/information
+
+Non-Profit Viewers
+	1.) View Current Opportunities
+	2.) View Opportunity statistics
+
+
+Non-Profit Creators
+	1.) Create Unique Profile
+		1a.) Non-Profit Name (How to store this? Should non-profits have their own Database?)
+			1a1.) Create own Database, Process for Administrators to add Partners
+			1a2.) Possible request of API to check if the business actually exists, and if so automatically accepts it, if not manual intervention needed by an admin
+				1a2a.) Bing Entity Search?
+	2.) Create New Opportunities
+	3.) View Opportunities
+	4.) Add-Friends
+		4a.) See EndUsers -> part 3
+
+	
+Non-Profit Admins
+	1.) Add/Remove/View Creators
+	2.) Add/Remove/View Opportunities
+	3.) Change roles of current Members
+
+
+Opportunities
+	1.) Tags that match with End-Users
+	2.) Opportunity Details
+		2a.) DateTime of event
+		2b.) Title
+		2c.) Description
+		2d.) short description (optional/nullable)
+		2e.) Creator (User)
+		2f.) DateTime of Creation
+		2g.) Last Edited By
+		2h.) Last Edited DateTime
+
+
+Functionality
+	1.) Match Volunteers with Opportunities
+		1a.) Maybe a recommended opportunities section
+	2.) Export admin statistics to a mailing list
+	3.) reports dashboard
+	4.) Provide links to  school volunteer forms
+	5.) Administrators to upload instructional documents/videos
+	6.) Mobil optimized
+
+
+
+*****CreatedTables*****
+
+Friend 
+Summary:
+(Mapping between users)
+Used for Many-To-Many EndUser Relationships
+
+OpportunityTag 
+Summary:
+(Reference table)
+Hold tag references and whether or not they are User tags or Opportunity Tags
+//NOTE: Do I actually need two tag mapping tables
+
+EndUserTag 
+Summary:
+(Mapping Table) 
+To represent Tags between Users and Tag table
+
+OpportunityTag 
+Summary:
+(Mapping Table) 
+Represent tags between opportunities and Tags
+
+Partner
+Summary: Represents the parent company that an Non-profit User may belong to

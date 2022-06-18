@@ -19,7 +19,7 @@ namespace VolunTEENProject.Controllers
             return View();
         }
 
-        [Authorize(Roles="Site Admin")]
+
         public IActionResult CreateRole() { 
             return View();
         }

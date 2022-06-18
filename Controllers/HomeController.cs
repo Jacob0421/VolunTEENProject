@@ -13,6 +13,12 @@ namespace VolunTEENProject.Controllers
             _logger = logger;
         }
 
+        public IActionResult CreateRole() { 
+            return View(); 
+        }
+
+
+
         public IActionResult Index()
         {
             return View();

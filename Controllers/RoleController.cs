@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using VolunTEENProject.ViewModels.Role;
 
 namespace VolunTEENProject.Controllers
 {
@@ -25,10 +26,16 @@ namespace VolunTEENProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRole(IdentityRole newRole)
+        public async Task<IActionResult> CreateRole(CreateRole role)
         {
             if (ModelState.IsValid)
             {
+
+                IdentityRole newRole = new IdentityRole()
+                {
+                    Name = role.Name,
+                };
+
                 var result = await _roleManager.CreateAsync(newRole);
 
                 if (result.Succeeded)
@@ -41,7 +48,7 @@ namespace VolunTEENProject.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            return View(newRole);
+            return View(role);
         }
 
     }

@@ -1,9 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using VolunTEENProject.Models;
 using VolunTEENProject.Models.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<IEndUserRepository, EndUserRepository>();

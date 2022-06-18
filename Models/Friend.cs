@@ -3,9 +3,9 @@
     public class Friend
     {
 
-        public int MainUserID { get; set; }
+        public string MainUserID { get; set; }
 
-        public int FriendUserID { get; set; }
+        public string FriendUserID { get; set; }
 
         public EndUser MainUser { get; set; }
 

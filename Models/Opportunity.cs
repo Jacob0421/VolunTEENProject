@@ -20,6 +20,10 @@ namespace VolunTEENProject.Models
         public string City { get; set; }
         [Required]
         public string State { get; set; }
+        [Required]
+        [MinLength(5), MaxLength(5)]
+        [Display(Name ="Zip Code")]
+        public int ZipCode { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public EndUser? UpdatedBy { get; set; }

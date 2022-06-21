@@ -1,0 +1,63 @@
+﻿@model VolunTEENProject.ViewModels.Account.EndUserDetails
+
+@{
+	ViewData["Title"] = "View Account";
+}
+<h1>View Account</h1>
+<hr />
+<div>
+	<div class="row">
+		<div class="col-md-4">
+			<form>
+				<div class="form-group">
+					<label asp-for="FirstName" class="control-label"></label>
+					<input asp-for="FirstName" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="lastName" class="control-label"></label>
+					<input asp-for="lastName" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="UserName" class="control-label"></label>
+					<input asp-for="UserName" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="Age" class="control-label"></label>
+					<input asp-for="Age" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="StreetAddress" class="control-label"></label>
+					<input asp-for="StreetAddress" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="City" class="control-label"></label>
+					<input asp-for="City" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="State" class="control-label"></label>
+					<input asp-for="State" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="ZipCode" class="control-label"></label>
+					<input asp-for="ZipCode" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="PhoneNumber" class="control-label"></label>
+					<input asp-for="PhoneNumber" class="form-control" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="EmailOptIn" class="control-label"></label>
+					<input asp-for="EmailOptIn" class="form-check" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label asp-for="TextOptIn" class="control-label"></label>
+					<input asp-for="TextOptIn" class="form-check" readonly="readonly" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

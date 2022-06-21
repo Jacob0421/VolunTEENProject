@@ -24,6 +24,8 @@ namespace VolunTEENProject.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            base.OnModelCreating(modelBuilder);
+
             //EndUserTags
             modelBuilder.Entity<EndUserTags>()
                 .HasKey(e => new { e.EndUserID, e.TagID });

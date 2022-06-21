@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using VolunTEENProject.Models;
 using VolunTEENProject.Models.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,11 +9,24 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddScoped<ITagRepository, TagRepository>();
-builder.Services.AddScoped<IEndUserRepository, EndUserRepository>();
 builder.Services.AddScoped<IOpportunityRepository, OpportunityRepository>();
 builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 builder.Services.AddScoped<IFriendRepository, FriendRepository>();
+
+builder.Services.AddIdentity<EndUser, IdentityRole>().AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
+//builder.Services.Configure<IdentityOptions>(options =>
+//{
+//    options.Password.RequiredLength = 8;
+//    options.Password.RequireNonAlphanumeric = true;
+//    options.Password.RequireUppercase = true;
+//    options.Password.RequireLowercase = true;
+//    options.Password.RequireDigit = true;
+//    options.User.RequireUniqueEmail = true;
+//});
 
 var app = builder.Build();
 

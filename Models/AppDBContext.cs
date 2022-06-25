@@ -19,6 +19,7 @@ namespace VolunTEENProject.Models
         public DbSet<OpportunityTags> OpportunityTags { get; set; }
         public DbSet<Partner> Partners { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<PartnerMember> PartnerMembers{ get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -73,6 +74,22 @@ namespace VolunTEENProject.Models
                 .HasOne<Tag>(t => t.Tag)
                 .WithMany()
                 .HasForeignKey(t => t.TagID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            //PartnerMembers
+            modelBuilder.Entity<PartnerMember>()
+                .HasKey(p => new { p.UserId, p.PartnerId});
+
+            modelBuilder.Entity<PartnerMember>()
+                .HasOne<EndUser>( e => e.User)
+                .WithMany()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<PartnerMember>()
+                .HasOne<Partner>(p => p.Partner)
+                .WithMany()
+                .HasForeignKey(p => p.PartnerId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
 

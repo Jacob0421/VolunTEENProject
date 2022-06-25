@@ -68,6 +68,11 @@
                     <input asp-for="Password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
+                @if(signInManager.IsSignedIn(User) && User.IsInRole("Site Admin")){
+                    <div class="form-group">
+                        <select asp-items="@ViewBag.RoleNames" id="UserRole" class="form-select" required></select>
+                    </div>
+                }
                 <div class="form-group">
                     <label asp-for="TextOptIn" class="control-label"></label>
                     <input asp-for="TextOptIn" class="form-check" />

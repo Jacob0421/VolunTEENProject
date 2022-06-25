@@ -13,9 +13,6 @@ namespace VolunTEENProject.Models
         [Required]
         public string PartnerName { get; set; }
         
-        [HiddenInput]
-        public EndUser? HeadRepresentative { get; set; }
-        
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
@@ -40,6 +37,8 @@ namespace VolunTEENProject.Models
 
         public DateTime? CreatedTime { get; set; }
         public string? NormalizedEmail { get; set; }
+
+        public string? PartnerLogo { get; set; }
 
     }
 }

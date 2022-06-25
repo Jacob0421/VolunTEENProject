@@ -47,6 +47,8 @@ namespace VolunTEENProject.ViewModels.Account
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        public string? UserRole { get; set; }
+
         [Display(Name ="Would you like to Opt-in to email communications?")]
         public bool TextOptIn { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VolunTEENProject.ViewModels.Partner;
 
 namespace VolunTEENProject.Controllers
 {
@@ -8,5 +9,17 @@ namespace VolunTEENProject.Controllers
         {
             return View();
         }
+
+        public IActionResult CreatePartner()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreatePartner(CreatePartner newPartner)
+        {
+            return View();
+        }
+
     }
 }

@@ -1,0 +1,28 @@
+﻿@model VolunTEENProject.ViewModels.Partner.AddUser
+
+@{
+    ViewData["Title"] = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1>Add User</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="AddUser">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <select asp-items="@ViewBag.UserList" asp-for="userID" class="form-select" required></select>
+                    </div>
+                    <div class="form-group">
+                        <select asp-items="@ViewBag.PartnerList" asp-for="partnerID" class="form-select" required></select>
+                    </div>
+                <div class="form-group">
+                    <button type="submit" value="Create" class="btn btn-primary">Add User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

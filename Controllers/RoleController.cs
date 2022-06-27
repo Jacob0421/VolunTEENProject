@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using VolunTEENProject.Models;
 using VolunTEENProject.ViewModels.Role;
 
 namespace VolunTEENProject.Controllers
@@ -8,9 +9,9 @@ namespace VolunTEENProject.Controllers
     public class RoleController : Controller
     {
 
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<Role> _roleManager;
 
-        public RoleController(RoleManager<IdentityRole> roleManager)
+        public RoleController(RoleManager<Role> roleManager)
         {
             _roleManager = roleManager;
         }
@@ -31,9 +32,11 @@ namespace VolunTEENProject.Controllers
             if (ModelState.IsValid)
             {
 
-                IdentityRole newRole = new IdentityRole()
+                Role newRole = new Role()
                 {
                     Name = role.Name,
+                    RoleDescription= role.Description,
+                    IsPartnerRole= role.IsPartnerRole,
                 };
 
                 var result = await _roleManager.CreateAsync(newRole);

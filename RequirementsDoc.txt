@@ -73,6 +73,24 @@ Functionality
 	5.) Administrators to upload instructional documents/videos
 	6.) Mobil optimized
 
+Partner
+	1.) 
+		1a.) Partner Logo (File)
+		2a.) Partner Name
+		3a.) Partner Address
+		4a.) Partner State
+		5a.) Partner City
+		6a.) Partner ZipCode
+		7a.) Partner PhoneNumber
+		8a.) Partner EMail
+	2.) 
+
+PartnerMembers
+	1.) PartnerID
+	2.) MemberID
+	3.) Partner
+	3.) Member
+
 
 
 *****CreatedTables*****

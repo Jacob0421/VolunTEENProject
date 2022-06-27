@@ -17,7 +17,7 @@ builder.Services.AddScoped<IOpportunityRepository, OpportunityRepository>();
 builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 builder.Services.AddScoped<IFriendRepository, FriendRepository>();
 
-builder.Services.AddIdentity<EndUser, IdentityRole>().AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<EndUser, Role>().AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
 //builder.Services.Configure<IdentityOptions>(options =>
 //{
 //    options.Password.RequiredLength = 8;

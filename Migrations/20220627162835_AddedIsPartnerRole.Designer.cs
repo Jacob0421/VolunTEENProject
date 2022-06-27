@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VolunTEENProject.Models;
 
@@ -11,9 +12,10 @@ using VolunTEENProject.Models;
 namespace VolunTEENProject.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220627162835_AddedIsPartnerRole")]
+    partial class AddedIsPartnerRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -274,7 +276,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("TagID");
 
-                    b.ToTable("EndUserTags", (string)null);
+                    b.ToTable("EndUserTags");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Friend", b =>
@@ -289,7 +291,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("FriendUserID");
 
-                    b.ToTable("Friends", (string)null);
+                    b.ToTable("Friends");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Opportunity", b =>
@@ -344,7 +346,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("UpdatedById");
 
-                    b.ToTable("Opportunities", (string)null);
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.OpportunityTags", b =>
@@ -359,7 +361,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("TagID");
 
-                    b.ToTable("OpportunityTags", (string)null);
+                    b.ToTable("OpportunityTags");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Partner", b =>
@@ -413,7 +415,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasKey("PartnerID");
 
-                    b.ToTable("Partners", (string)null);
+                    b.ToTable("Partners");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.PartnerMember", b =>
@@ -428,7 +430,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("PartnerId");
 
-                    b.ToTable("PartnerMembers", (string)null);
+                    b.ToTable("PartnerMembers");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Tag", b =>
@@ -458,7 +460,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("CreatedById");
 
-                    b.ToTable("Tags", (string)null);
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Role", b =>

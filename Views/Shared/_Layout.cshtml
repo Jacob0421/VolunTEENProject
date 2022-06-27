@@ -50,6 +50,15 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-action="AddUser" asp-controller="Partner">AddUser</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Login" asp-controller="Home">Login</a>
+                        </li>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li>
+                                <a class="nav-link">Hello, @User.Identity.Name</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

@@ -20,6 +20,7 @@ namespace VolunTEENProject.Models
         public DbSet<Partner> Partners { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PartnerMember> PartnerMembers{ get; set; }
+        public DbSet<Role> Roles { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VolunTEENProject.Models;
 
@@ -11,9 +12,10 @@ using VolunTEENProject.Models;
 namespace VolunTEENProject.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220627073126_AddedPartnerSecondLine")]
+    partial class AddedPartnerSecondLine
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,10 +31,6 @@ namespace VolunTEENProject.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -51,8 +49,6 @@ namespace VolunTEENProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityRole");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -274,7 +270,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("TagID");
 
-                    b.ToTable("EndUserTags", (string)null);
+                    b.ToTable("EndUserTags");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Friend", b =>
@@ -289,7 +285,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("FriendUserID");
 
-                    b.ToTable("Friends", (string)null);
+                    b.ToTable("Friends");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Opportunity", b =>
@@ -344,7 +340,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("UpdatedById");
 
-                    b.ToTable("Opportunities", (string)null);
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.OpportunityTags", b =>
@@ -359,7 +355,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("TagID");
 
-                    b.ToTable("OpportunityTags", (string)null);
+                    b.ToTable("OpportunityTags");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Partner", b =>
@@ -413,7 +409,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasKey("PartnerID");
 
-                    b.ToTable("Partners", (string)null);
+                    b.ToTable("Partners");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.PartnerMember", b =>
@@ -428,7 +424,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("PartnerId");
 
-                    b.ToTable("PartnerMembers", (string)null);
+                    b.ToTable("PartnerMembers");
                 });
 
             modelBuilder.Entity("VolunTEENProject.Models.Tag", b =>
@@ -458,21 +454,7 @@ namespace VolunTEENProject.Migrations
 
                     b.HasIndex("CreatedById");
 
-                    b.ToTable("Tags", (string)null);
-                });
-
-            modelBuilder.Entity("VolunTEENProject.Models.Role", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
-
-                    b.Property<bool>("IsPartnerRole")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RoleDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Role");
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

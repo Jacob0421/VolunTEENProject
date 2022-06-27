@@ -27,14 +27,28 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav flex-row-reverse mr-3">
+                        @*
                         <li class="nav-item">
                             <a class="nav-link" asp-action="CreateRole" asp-controller="Role">Create Role</a>
                         </li>
+                        *@
+                        @*
                         <li class="nav-item">
                             <a class="nav-link" asp-action="CreateEndUser" asp-controller="Account">Create EndUser</a>
                         </li>
+                        *@
+                        @*
                         <li class="nav-item">
-                            <button class="nav-link" onclick="location.href='@Url.Action("EndUserDetails", "Account", new { EndUserId = "4062e723-cba3-4686-b894-7eb19bfe2deb" })'">EndUser Details</button>
+                            <a class="nav-link" onclick="location.href='@Url.Action("EndUserDetails", "Account", new { EndUserId = "4062e723-cba3-4686-b894-7eb19bfe2deb" })'">EndUser Details</a>
+                        </li>
+                        *@
+                        @*
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="CreatePartner" asp-controller="Partner">Create Partner</a>
+                        </li>
+                        *@
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="AddUser" asp-controller="Partner">AddUser</a>
                         </li>
                     </ul>
                 </div>

@@ -20,8 +20,11 @@ namespace VolunTEENProject.Controllers
 
         public IActionResult Index()
         {
-
-                return View();
+            if(ViewBag.IsSuccessful != null)
+            {
+                ViewBag.IsSuccessful = ViewBag.IsSuccessful.ToString();
+            }
+            return View();
         }
 
         public async Task<IActionResult> UploadFiles(UploadFile model)

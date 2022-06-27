@@ -23,6 +23,9 @@ namespace VolunTEENProject.Models
         
         [Required]
         public string StreetAddress { get; set; }
+
+        [Required]
+        public string AddressSecondLine { get; set; }
         
         [Required]
         public string City { get; set; }
